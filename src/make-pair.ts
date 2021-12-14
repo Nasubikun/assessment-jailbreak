@@ -3,7 +3,7 @@ export const make_pair = (array: readonly number[]): number[][] => {
 
   const dfs = (f: number, ...rest: number[]): void => {
     const n = rest.length
-    for (let i=0; i<n; ++i) {
+    for (let i = 0; i < n; ++i) {
       const s = rest[i] as number
       result.push([f, s])
 
