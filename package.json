@@ -8,7 +8,8 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier src --write",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.0.7",
@@ -30,8 +31,14 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": ">=6",
     "jest": "^27.4.3",
+    "lint-staged": ">=10",
     "prettier": "^2.5.1",
     "typescript": "4.5.2"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "eslint --cache --fix",
+    "*.{js,ts,jsx,tsx,json,css}": "prettier --write"
   }
 }
