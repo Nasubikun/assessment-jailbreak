@@ -9,6 +9,7 @@
     "lint:style": "stylelint \"src/**/*.css\" --fix",
     "format": "prettier src --write",
     "test": "jest",
+    "gen": "scaffdog generate",
     "prepare": "husky install"
   },
   "dependencies": {
