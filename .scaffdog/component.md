@@ -1,8 +1,8 @@
 ---
 name: 'component'
 root: 'src/components'
-output: '*'
-ignore: []
+output: ['*', 'model/*']
+ignore: ['src/components', 'src/components/model', 'src/components/page']
 questions:
   name: 'Please enter the name.'
 ---
