@@ -10,11 +10,13 @@ questions:
 # `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.tsx`
 
 ```tsx
-import styles from "./{{ inputs.name | pascal }}.module.css"
+{{- inputs.name | pascal | define "name" -}}
 
-type {{ inputs.name | pascal }}Props = {}
+import styles from "./{{ name }}.module.css"
 
-export const {{ inputs.name | pascal }} = (props: {{ inputs.name | pascal }}Props): JSX.Element => {
+type {{ name }}Props = {}
+
+export const {{ name }} = (props: {{ name }}Props): JSX.Element => {
   return (
     <div>hello</div>
   )
