@@ -10,12 +10,14 @@ questions:
 # `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.page.tsx`
 
 ```tsx
-import { {{ inputs.name | pascal }} } from "./{{ inputs.name | pascal }}"
+{{- inputs.name | pascal | define "name" -}}
 
-export const {{ inputs.name | pascal }}Page = () => {
+import { {{ name }} } from "./{{ name }}"
+
+export const {{ name }}Page = () => {
   return (
     <div>
-      <{{ inputs.name | pascal }} />
+      <{{ name }} />
     </div>
   )
 }
@@ -24,9 +26,11 @@ export const {{ inputs.name | pascal }}Page = () => {
 # `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.tsx`
 
 ```tsx
-import styles from "./{{ inputs.name | pascal }}.module.css"
+{{- inputs.name | pascal | define "name" -}}
 
-export const {{ inputs.name | pascal }} = (): JSX.Element => {
+import styles from "./{{ name }}.module.css"
+
+export const {{ name }} = (): JSX.Element => {
   return (
     <div>hello</div>
   )
@@ -41,7 +45,9 @@ export const {{ inputs.name | pascal }} = (): JSX.Element => {
 # `{{ inputs.name | pascal }}/index.ts`
 
 ```ts
-import { {{ inputs.name | pascal }}Page } from "./{{ inputs.name | pascal }}.page"
+{{- inputs.name | pascal | define "name" -}}
 
-export default {{ inputs.name | pascal }}Page
+import { {{ name }}Page } from "./{{ name }}.page"
+
+export default {{ name }}Page
 ```
