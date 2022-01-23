@@ -28,18 +28,11 @@ export const {{ name }}Page = () => {
 ```tsx
 {{- inputs.name | pascal | define "name" -}}
 
-import styles from "./{{ name }}.module.css"
-
 export const {{ name }} = (): JSX.Element => {
   return (
     <div>hello</div>
   )
 }
-```
-
-# `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.module.css`
-
-```css
 ```
 
 # `{{ inputs.name | pascal }}/index.ts`

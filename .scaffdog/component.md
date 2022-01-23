@@ -12,8 +12,6 @@ questions:
 ```tsx
 {{- inputs.name | pascal | define "name" -}}
 
-import styles from "./{{ name }}.module.css"
-
 type {{ name }}Props = {}
 
 export const {{ name }} = (props: {{ name }}Props): JSX.Element => {
@@ -21,11 +19,6 @@ export const {{ name }} = (props: {{ name }}Props): JSX.Element => {
     <div>hello</div>
   )
 }
-```
-
-# `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.module.css`
-
-```css
 ```
 
 # `{{ inputs.name | pascal }}/index.ts`
