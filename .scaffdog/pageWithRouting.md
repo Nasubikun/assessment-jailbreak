@@ -1,13 +1,15 @@
 ---
-name: "page"
-root: "src/components/page"
+name: "page (with routing)"
+root: "src"
 output: "."
 ignore: []
 questions:
   name: "Please enter the name."
+  routingName:
+    message: "Please enter the routing name"
 ---
 
-# `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.page.tsx`
+# `components/page/{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.page.tsx`
 
 ```tsx
 {{- inputs.name | pascal | define "name" -}}
@@ -26,7 +28,7 @@ export const {{ name }}Page = () => {
 }
 ```
 
-# `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.tsx`
+# `components/page/{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.tsx`
 
 ```tsx
 {{- inputs.name | pascal | define "name" -}}
@@ -38,7 +40,7 @@ export const {{ name }} = (): JSX.Element => {
 }
 ```
 
-# `{{ inputs.name | pascal }}/index.ts`
+# `components/page/{{ inputs.name | pascal }}/index.ts`
 
 ```ts
 {{- inputs.name | pascal | define "name" -}}
@@ -46,4 +48,20 @@ export const {{ name }} = (): JSX.Element => {
 import { {{ name }}Page } from "./{{ name }}.page"
 
 export default {{ name }}Page
+```
+
+# `pages/{{ inputs.routingName | lower }}.tsx`
+
+```tsx
+{{- inputs.name | pascal | define "name" -}}
+
+import {{ name }}Page from "@/components/page/{{ name }}"
+
+import type { NextPage } from "next"
+
+const {{name}}: NextPage = () => {
+  return <{{name}}Page />
+}
+
+export default {{name}}
 ```

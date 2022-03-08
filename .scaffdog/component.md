@@ -1,10 +1,10 @@
 ---
-name: 'component'
-root: 'src/components'
-output: ['*', 'model/*']
-ignore: ['src/components', 'src/components/model', 'src/components/page']
+name: "component"
+root: "src/components"
+output: ["*", "model/*"]
+ignore: ["src/components", "src/components/model", "src/components/page"]
 questions:
-  name: 'Please enter the name.'
+  name: "Please enter the name."
 ---
 
 # `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.tsx`
